@@ -1,0 +1,18 @@
+<app-profile-form (searchFull)="getyourRepo($event)"></app-profile-form>
+<div class="container">
+
+    <div *ngFor="let repo of repos">
+
+        <h5 class="card-title">Repo Name: &nbsp;{{repo.name}} </h5>
+        <div class="desc"><span class="top">Description:</span> &nbsp;{{repo.description}}
+            <span class="top">Language: </span> {{repo.language}}
+            <div class="card-subtitle mb-2"><span class="top">Created On:</span> &nbsp;{{repo.created_at | date}}</div>
+        </div>
+        <button class="btn  btn-info">
+            {{repo.watchers_count}}</button>
+        <button class="btn btn-danger">
+                {{repo.forks}}</button>
+        <button class="btn  btn-success"><a href="{{repo.html_url}}"
+                    >Link &nbsp;</a> </button>
+    </div>
+</div>

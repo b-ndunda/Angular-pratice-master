@@ -1,0 +1,34 @@
+<br>
+<app-profile-form (searchFull)="Get($event)"></app-profile-form>
+
+
+
+<div class="card-body">
+    <h5>{{user.login}}</h5>
+    <img src="{{user.avatar_url}}">
+    <p>{{user.bio}}</p>
+    <p>{{user.public_repos}}</p>
+    <p>{{user.followers}}</p>
+    <p>{{user.following}}</p>
+    <p> {{user.created_at}}</p>
+    <p>{{user.login}}</p>
+    <a href="{{user.html_url}}" target='_blank'><button class="btn-outline-success btn">Link</button></a>
+
+</div>
+
+<div class="container">
+
+    <div *ngFor="let repo of repos" appHighlight>
+
+        <h5>Repo Name{{repo.name}} </h5>
+        <div>Description:{{repo.description}} Language: {{repo.language}}</div>
+        <div>Created On:{{repository.created_at | date}}</div>
+        <button class="btn  btn-info">{{repo.watchers_count|dateCount}}</button>
+        <button class="btn btn-danger">
+                {{repo.forks}}</button>
+        <button class="btn  btn-success"><a href="{{repo.html_url}}"
+                    >Link &nbsp;</a> </button>
+
+    </div>
+
+</div>
